@@ -1,0 +1,10 @@
+<odoo>
+
+    <!-- Add Default Today & My Orders Search to user dashboard menu-->
+    <menuitem id="menu_my_daily_orders_user"
+              action="fieldservice_mcmpest_groups.action_my_daily_orders"
+              parent="fieldservice.dashboard"
+              sequence="30"
+              groups="fieldservice.group_fsm_user"/>
+
+</odoo>

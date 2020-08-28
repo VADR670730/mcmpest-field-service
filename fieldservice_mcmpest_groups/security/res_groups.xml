@@ -1,0 +1,10 @@
+<odoo>
+
+    <!-- FSM groups -->
+    <record id="group_fsm_tech" model="res.groups">
+        <field name="name">Technician</field>
+        <field name="category_id" ref="fieldservice.fsm"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+</odoo>

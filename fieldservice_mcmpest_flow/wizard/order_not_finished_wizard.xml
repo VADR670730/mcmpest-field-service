@@ -1,0 +1,19 @@
+<odoo>
+    <record id="view_order_not_finished_wizard" model="ir.ui.view">
+        <field name="name">Explain Reason FSM Order not Finished</field>
+        <field name="model">order.not.finished.wizard</field>
+        <field name="arch" type="xml">
+            <form string="FSM Order">
+                Provide a reason the order is not able to be completed.
+                <group>
+                    <field name="fsm_order_id" invisible="1"/>
+                    <field name="reason"/>
+                </group>
+                <footer>
+                    <button string="Submit" type="object" name="action_not_finish_wizard" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

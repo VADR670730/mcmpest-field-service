@@ -1,0 +1,34 @@
+<odoo>
+
+    <!-- Default Today & My Orders for tech dashboard -->
+    <record id="action_my_daily_orders" model="ir.actions.act_window">
+        <field name="name">My Daily Orders</field>
+        <field name="res_model">fsm.order</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="fieldservice.fsm_order_search_view"/>
+        <field name="context">{'search_default_my_orders': 1, 'search_default_order_today': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            No assigned orders
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Additions -->
+    <menuitem id="tech_dash" name="Tech Dashboard"
+              sequence="10" parent="fieldservice.root"
+              groups="fieldservice_mcmpest_groups.group_fsm_tech"/>
+    <menuitem id="menu_my_daily_orders"
+              action="action_my_daily_orders"
+              parent="tech_dash"
+              sequence="1"
+              groups="fieldservice_mcmpest_groups.group_fsm_tech"/>
+
+    <!-- Show root FSM Icon for Tech group -->
+    <record model="ir.ui.menu" id="fieldservice.root">
+        <field name="groups_id"
+               eval="[(4,ref('fieldservice_mcmpest_groups.group_fsm_tech'))]"/>
+    </record>
+
+</odoo>

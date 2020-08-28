@@ -1,0 +1,11 @@
+<odoo>
+
+    <record id="contract_line_qty_formula_fsm_complete" model="contract.line.qty.formula">
+        <field name='name'>Complete FSM Orders</field>
+        <field name='code'>order_count = len(line._invoiceable_fsm_order(
+    period_first_date, period_last_date, False))
+result = order_count or 0.0
+        </field>
+    </record>
+
+</odoo>
